@@ -1,0 +1,65 @@
+@import "bootstrap/scss/bootstrap";
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #f8f9fc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  
+    .sidebar-header {
+      text-align: center;
+      padding: 10px;
+    }
+  
+    .logo {
+      width: 120px;
+    }
+  
+    .nav-link {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      color: #6c757d;
+      font-weight: 500;
+      text-decoration: none;
+  
+      i {
+        margin-right: 10px;
+        font-size: 18px;
+      }
+  
+      &:hover {
+        background: #e2e6ea;
+        color: #4e73df;
+        border-radius: 5px;
+      }
+    }
+  
+    .submenu {
+      list-style: none;
+      padding-left: 30px;
+      display: none;
+  
+      a {
+        display: block;
+        padding: 8px;
+        color: #6c757d;
+        font-size: 14px;
+        text-decoration: none;
+        
+        &:hover {
+          color: #4e73df;
+        }
+      }
+    }
+  
+    .submenu.show {
+      display: block;
+    }
+  }
+  

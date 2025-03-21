@@ -1,7 +1,54 @@
+@import "bootstrap/scss/bootstrap";
+
 .header {
-    background: #333;
-    color: white;
-    padding: 15px;
-    text-align: center;
+  background-color: #7d5ce5; /* Warna ungu */
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  .logo {
+    height: 25px;
   }
-  
+  .btn-profile {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  .avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+
+  .dropdown-menu {
+    display: none; /* Default tersembunyi */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    background-color: #9e88e4;
+    box-shadow: 0 10px 2px rgba(0, 0, 0, 0.1);
+    color: white;
+  }
+}
+
+/* Tambahkan padding pada body agar konten tidak tertutup header */
+body {
+  padding-top: 150px; /* Sesuaikan dengan tinggi header */
+}

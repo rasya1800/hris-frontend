@@ -1,7 +1,44 @@
-<nav class="sidebar">
-    <ul>
-      <li><a routerLink="/dashboard">Dashboard</a></li>
-      <li><a routerLink="/profile">Profile</a></li>
-    </ul>
-  </nav>
-  
+<div class="sidebar">
+
+  <!-- Menu -->
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="bi bi-house-door"></i> Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="bi bi-people"></i> Employees</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="toggleSubmenu('coreHR')">
+        <i class="bi bi-clock"></i> Core HR
+        <i class="bi bi-chevron-down float-end"></i>
+      </a>
+      <ul class="submenu" [ngClass]="{'show': activeMenu === 'coreHR'}">
+        <li><a href="#">HR Policies</a></li>
+        <li><a href="#">Leave Management</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="bi bi-wallet"></i> Finance</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="bi bi-cash-stack"></i> Payroll</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="toggleSubmenu('inventory')">
+        <i class="bi bi-clipboard"></i> Inventory Control
+        <i class="bi bi-chevron-down float-end"></i>
+      </a>
+      <ul class="submenu" [ngClass]="{'show': activeMenu === 'inventory'}">
+        <li><a href="#">Stock Management</a></li>
+        <li><a href="#">Suppliers</a></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="bi bi-ui-checks"></i> Tasks</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="bi bi-layers"></i> Projects</a>
+    </li>
+  </ul>
+</div>
