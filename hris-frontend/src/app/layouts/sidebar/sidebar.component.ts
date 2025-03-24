@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common'; // WAJIB ditambahkan!
 import { Component } from '@angular/core';
+declare const feather: any;
 
 @Component({
   selector: 'app-sidebar',
