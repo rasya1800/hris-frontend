@@ -1,5 +1,35 @@
-<div class="dashboard">
-    <h2>Dashboard</h2>
-    <p>Welcome to your dashboard.</p>
-  </div>
-  
+<div class="py-4 px-3">
+  <table class="w-100">
+    <tr>
+      <td *ngFor="let card of topCards" class="dashboard-td">
+        <div class="dashboard-card">
+          <div class="d-flex align-items-center mb-2">
+            <i class="bi fs-5 me-2 text-primary" [ngClass]="card.icon"></i>
+            <h6 class="mb-0 card-title">{{ card.title }}</h6>
+          </div>
+
+          <h4 *ngIf="card.type !== 'attendance'" class="fw-bold mb-2">{{ card.value }}</h4>
+
+          <div *ngIf="card.type === 'default'">
+            <small class="text-success">{{ card.subtitle }}</small>
+          </div>
+
+          <div *ngIf="card.type === 'progress'">
+            <div class="progress" style="height: 6px;">
+              <div class="progress-bar bg-success" [style.width.%]="card.progress"></div>
+            </div>
+            <small class="text-muted d-block mt-1">{{ card.subtitle }}</small>
+          </div>
+
+          <div *ngIf="card.type === 'attendance' && card.attendanceData">
+            <ul class="list-unstyled small mb-0">
+              <li>✅ Present: {{ card.attendanceData?.present }}</li>
+              <li>⏰ Late: {{ card.attendanceData?.late }}</li>
+              <li>🚫 Absent: {{ card.attendanceData?.absent }}</li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,12 +1,18 @@
 <app-header></app-header>
 
-<div class="layout-container">
+<div class="layout-container d-flex">
   <br>
-  <app-sidebar></app-sidebar>
-  
-  <main class="content">
-    <router-outlet></router-outlet>
-  </main>
+
+   <!-- Sidebar -->
+  <div class="sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="content-area flex-grow-1 p-3">
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
 </div>
 
 <app-footer></app-footer>

@@ -1,13 +1,57 @@
-.dashboard {
-  padding-left: 20px;
-  position: relative;
+table {
+  table-layout: fixed; // penting agar kolom sama rata
+  width: 100%;
+  border-spacing: 1.5rem; // jarak antar cards
+  border-collapse: separate;
+}
+
+.dashboard-td {
+  width: 25%; // 4 kolom rata
+  vertical-align: top;
+
+  @media (max-width: 992px) {
+    width: 50%;
+  }
+
+  @media (max-width: 576px) {
+    width: 100%;
+    display: block;
+  }
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  height: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 0px solid rgba(0, 0, 0, 0.125);
-  border-radius: 4px;
+  justify-content: flex-start;
+
+  h6 {
+    font-weight: 600;
   }
-  
+
+  h4 {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  .progress {
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  ul {
+    padding-left: 0;
+    li {
+      margin-bottom: 0.25rem;
+    }
+  }
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}

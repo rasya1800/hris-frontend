@@ -9,9 +9,9 @@
       <a class="nav-link" href="#"><i class="bi bi-people"></i> Employees</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" (click)="toggleSubmenu('coreHR')">
-        <i class="bi bi-clock"></i> Core HR
-        <i class="bi bi-chevron-down float-end"></i>
+      <a class="nav-link d-flex justify-content-between align-items-center" (click)="toggleSubmenu('coreHR')">
+        <span class="d-flex align-items-center"><i class="bi bi-clock"></i> Core HR</span>
+        <i [ngClass]="activeMenu === 'coreHR' ? 'bi bi-chevron-down' : 'bi bi-chevron-right'"></i>
       </a>
       <ul class="submenu" [ngClass]="{'show': activeMenu === 'coreHR'}">
         <li><a href="#">HR Policies</a></li>
@@ -25,9 +25,9 @@
       <a class="nav-link" href="#"><i class="bi bi-cash-stack"></i> Payroll</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" (click)="toggleSubmenu('inventory')">
-        <i class="bi bi-clipboard"></i> Inventory Control
-        <i class="bi bi-chevron-down float-end"></i>
+      <a class="nav-link d-flex justify-content-between align-items-center" (click)="toggleSubmenu('inventory')">
+        <span class="d-flex align-items-center"><i class="bi bi-clipboard"></i> Inventory Control</span>
+        <i [ngClass]="activeMenu === 'inventory' ? 'bi bi-chevron-down' : 'bi bi-chevron-right'"></i>
       </a>
       <ul class="submenu" [ngClass]="{'show': activeMenu === 'inventory'}">
         <li><a href="#">Stock Management</a></li>
